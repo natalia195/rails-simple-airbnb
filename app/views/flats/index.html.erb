@@ -1,0 +1,30 @@
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+        <h1>All our Flats</h1>
+        </div>
+    </div>
+    <div class="row">
+    <% @flats.each do |f| %>
+        <div class="col-4">
+        <div class="card card-body shadow-sm bg-light">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200')"></div>
+          <div class="card-content">
+            <div class="card-title">
+              <h4><%= f.name %></h4>
+            </div>
+            <p><%= f.address %></p>
+               <i class="fas fa-users card-link"></i><span>2</span>
+               <i class="fas fa-dollar-sign card-link"></i> <%= f.price_per_night %>
+          </div>
+          <div class="card-actions bg-white">
+            <a href="/flats/5001">More info</a>
+            <a class="ml-3 text-warning" href="/flats/5001/edit">Edit</a>
+            <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/flats/5001">Remove</a>
+          </div>
+        </div>
+        </div>
+    <% end %>
+    </div>
+</div>
